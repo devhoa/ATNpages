@@ -35,6 +35,12 @@ router.get('/cart',(req,res) => {
 			//no need to write to HTTP response header: Content-type
 			res.send('This is CART page');
 		});
+router.get('/addcategory',(req,res) => {
+	//the same as res.write/res.end in previous labs (without using Express)
+	//no need to write to HTTP response header: Content-type
+	res.sendFile(path.join(__dirname + '/addcategory.html'));
+	//res.send('This is CART page');
+});
 
 app.use('/',router);
 app.listen(port);
